@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "a",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "b",
+						"type": "uint256"
+					}
+				],
+				"name": "comparison",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"compare.sol": "C"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"compare.sol": {
+			"keccak256": "0xc9c2d033a570966156821cc841a37fa83724f0cf99cccaed698d6d18698e78db",
+			"urls": [
+				"bzz-raw://f74e5566f7ae86a3b41970f38a1f002af87921f787e922f1720ed72e9ad036cb",
+				"dweb:/ipfs/QmVcBfCSX3Uy2RwvUbDsSR9GinUQXSjmpHybfoKGJCUBkf"
+			]
+		}
+	},
+	"version": 1
+}
