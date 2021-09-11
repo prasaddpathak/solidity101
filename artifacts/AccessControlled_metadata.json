@@ -1,0 +1,67 @@
+{
+	"compiler": {
+		"version": "0.5.9+commit.e560f70d"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isVoting",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"name": "_isVoting",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity101/accessControlled.sol": "AccessControlled"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity101/accessControlled.sol": {
+			"keccak256": "0x81b2f9e5c7090a2b4d98e2d5c7b8d73ea8ee02813e6b33f2db6caea93a0a1d6e",
+			"urls": [
+				"bzzr://82dd0e08b274213b07bab3bb64aa1b13745295c9d01b86188951cdd26e533a4b",
+				"dweb:/ipfs/QmUFq7ZGt41SKvDAseASHMcomKKayKzB38bqhN2a651dZ6"
+			]
+		}
+	},
+	"version": 1
+}

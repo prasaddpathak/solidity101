@@ -1,10 +1,10 @@
 pragma solidity ^0.5.9;
 
+import './AccessControlled.sol';
 
-contract Voting {
-
-	bool public isVoting;
-
+contract Voting is AccessControlled {
+    
+    AccessControlled _AccessControlled;
 	// Vote Struct. It defines a custom type to be used to store values for every vote received.
 	struct Vote {
 		address receiver;
@@ -21,24 +21,29 @@ contract Voting {
 	event StopVoting(address stoppedBy);
 
 	// Main constructor of the contract. It sets the owner of the contract and the voting status flag to false.
-	constructor() public {
-		isVoting = false;
+	constructor() AccessControlled(msg.sender, false) public {
+		_AccessControlled = new AccessControlled(msg.sender, false);
 	}
 
-	function startVoting() external returns(bool) {
+	function startVoting() external onlyOwner returns(bool) {
+		require(!isVoting, "Voting is already OPEN.");
 		isVoting = true;
-		emit StartVoting(msg.sender);
+		emit StartVoting(owner);
 		return true;
 	}
 
-	function stopVoting() external returns(bool) {
+	function stopVoting() external onlyOwner returns(bool) {
+		require(isVoting, "Voting is already CLOSED.");
 		isVoting = false;
-		emit StopVoting(msg.sender);
+		emit StopVoting(owner);
 		return true;
 	}
 
 	function addVote(address receiver) external returns(bool) {
-	
+		assert(receiver != address(0));
+		require(isVoting, "Voting is currently not open. Please try again later.");
+		require(votes[msg.sender].timestamp == 0, "This user has already voted!");
+
 		// Set values for the Vote struct
 		votes[msg.sender].receiver = receiver;
 		votes[msg.sender].timestamp = now;
@@ -47,7 +52,10 @@ contract Voting {
 		return true;
 	}
 
-	function removeVote() external returns(bool) {
+	function removeVote() external onlyOwner returns(bool) {
+
+		require(isVoting, "Voting is currently not open. Please try again later.");
+		require(votes[msg.sender].timestamp != 0, "This user has NOT voted yet!");
 
 		delete votes[msg.sender];
 
@@ -56,6 +64,8 @@ contract Voting {
 	}
 
 	function getVote(address voterAddress) external view returns(address candidateAddress) {
+		require(msg.sender == owner, "Only the contract owner can perform this operation");
 		return votes[voterAddress].receiver;
 	}
 }
+

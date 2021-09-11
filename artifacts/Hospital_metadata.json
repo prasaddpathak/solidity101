@@ -1,0 +1,99 @@
+{
+	"compiler": {
+		"version": "0.5.9+commit.e560f70d"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "rooms",
+				"outputs": [
+					{
+						"name": "name",
+						"type": "bytes32"
+					},
+					{
+						"name": "occupant",
+						"type": "string"
+					},
+					{
+						"name": "occupied",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "roomName",
+						"type": "bytes32"
+					},
+					{
+						"name": "patientName",
+						"type": "string"
+					}
+				],
+				"name": "assignRoom",
+				"outputs": [
+					{
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "names",
+						"type": "bytes32[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity101/rooms.sol": "Hospital"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity101/rooms.sol": {
+			"keccak256": "0xb502d88f92d4a68355a23c4303f05daab60395966588ad343f81031281d53aef",
+			"urls": [
+				"bzzr://e9093a52454d96c42d8933a53f832b9821c2b64d2094b095fbac37237c3a514d",
+				"dweb:/ipfs/QmYLSdTEct7V9dL2nDjvqPmXKGRDJoy1EvEkcVKE3w1afJ"
+			]
+		}
+	},
+	"version": 1
+}
